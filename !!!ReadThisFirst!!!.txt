@@ -1,0 +1,13 @@
+Projekt zaliczeniowy z bazą danych z możliwością dodawania danych, edycji i usuwania (CRUD) oraz autentykacją i logowaniem wykonany w frameworku Razor Pages.
+
+Projekt jest samodzielną pracą wykonaną na podstawie szkolenia (tutorialu) Pavol Almasi.
+
+Do uruchomienia projektu niezbędna jest implementacja bazy danych, najłatwiej ją osiągnąć klikając "SQL Server Object Explorer", potem rozwijamy SQL Server, right clik na (localdb)\MSSQLLocalDB, "New Query", wklejamy treść skryptu z pliku BazaDanych.txt, klikamy zielony trójkat w lewym górnym rogu i implementacja podstawowej bazy danych jest gotowa.
+
+Konieczna jest jeszcze drobna modyfikacja, poprzez dodanie migracji i updatu.
+
+W "Package Manager Console" wpisujemy komendy i kolejno zatwierdzamy:
+(wartość LINK uzyskamy poprzez right click w "Solution Explorer" na nazwie projektu: EmployeeManager.RazorPages, wybór opcji "Copy full path" i wklejenie ścieżki po komendzie --project)
+PM> dotnet ef migrations add IdentityMigration --context AppIdentityDbContext --project LINK
+PM> dotnet ef database update IdentityMigration --context AppIdentityDbContext --project LINK
+
